@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karrinho Motos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            background-image: url("assets/imgs/bg.png");
+            background-size: cover; /* Faz a imagem cobrir todo o elemento */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola */
+        }
+        body,
+        ul,
+        li,
+        p {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.4rem;
+            font-family: Arial, sans-serif;
+        }
+
+        .formulario {
+            width: 80%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: transparent;
+
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* sombra */
+        }
+
+        .formulario input[type="text"],
+        .formulario input[type="number"],
+        .formulario textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1.2rem;
+
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75); /* sombra */
+        }
+
+        .formulario textarea {
+            resize: vertical;
+        }
+
+        .formulario button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .formulario button:hover {
+            background-color: #218838;
+        }
+
+        .painel-href {
+            background-color: #007bff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .painel-href:hover {
+            background-color:  #0056b3;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .painel-href a {
+            color: #fff;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (max-width: 600px) {
+            img {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="painel-href">
+            <a href="painel.php"><i class="fas fa-tachometer-alt"></i></a>
+        </div>
+        <div class="formulario">
+            <form action="assets/src/gerar_pdf.php" method="POST">
+                <img src="assets/imgs/motostars_logo.png" width="100">
+                <input type="text" id="nome_cliente" name="nome_cliente" placeholder="Nome do Cliente" required>
+                <input type="text" id="numero_contato" name="numero_contato" placeholder="Número de Contato" required>
+                <input type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+                <input type="number" id="quantidade" name="quantidade" placeholder="Quantidade de Peças" required>
+                <textarea id="descriminacao" name="descriminacao" placeholder="Descrição do Serviço" rows="4" required></textarea>
+                <input type="text" id="valor" name="valor" placeholder="Valor (R$)" required>
+                <button type="submit">Gerar Nota</button>
+            </form>
+        </div>
+        <a style="font-size: 1rem;text-decoration: none;color: #ccc;cursor: pointer;" href="https://secdevdf.github.io/secdevdf/">by SecdevDF</a>
+    </center>
+</body>
+</html>
