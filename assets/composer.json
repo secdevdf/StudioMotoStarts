@@ -1,0 +1,16 @@
+{
+    "name": "whoami/kaue",
+    "autoload": {
+        "psr-4": {
+            "Whoami\\Kaue\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Moosh"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^3.0"
+    }
+}
